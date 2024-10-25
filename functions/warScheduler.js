@@ -2,8 +2,8 @@ const cron = require('node-cron');
 const { ChannelType } = require('discord.js');
 
 module.exports = (client) => {
-  const channelId = '1254436933875011615'; // Replace with your target channel ID
-  const roleId = '1007930481716760666'; // Replace with the role ID you want to mention
+  const channelId = '1293920884016418867'; // Replace with your target channel ID
+  const roleId = '1208254412691341332'; // Replace with the role ID you want to mention
 
   // Function to send the message
   const sendWarMessage = async () => {
