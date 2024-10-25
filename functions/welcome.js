@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = (client) => {
   client.on('guildMemberAdd', async (member) => {
-    const channelId = '1297917830527979531'; // Replace with the channel ID where the welcome message should be sent
+    const channelId = '1189661851471073390'; // Replace with the channel ID where the welcome message should be sent
     const channel = member.guild.channels.cache.get(channelId);
 
     if (!channel) return console.error('Channel not found.');
