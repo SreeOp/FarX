@@ -3,7 +3,6 @@ const { Collection } = require('discord.js');
 // Create a collection to store user voice activity data
 const voiceLogs = new Collection();
 
-// Track voice state updates
 module.exports = (client) => {
   client.on('voiceStateUpdate', (oldState, newState) => {
     const userId = newState.id;
@@ -14,6 +13,8 @@ module.exports = (client) => {
         username: newState.member.user.tag,
         channelName: newState.channel.name,
         joinTime: new Date(),
+        leaveTime: null,
+        timeSpent: null,
       });
     }
 
@@ -22,7 +23,7 @@ module.exports = (client) => {
       const log = voiceLogs.get(userId);
       if (log) {
         log.leaveTime = new Date();
-        log.timeSpent = (log.leaveTime - log.joinTime) / 1000; // time spent in seconds
+        log.timeSpent = (log.leaveTime - log.joinTime) / 1000; // Time spent in seconds
         voiceLogs.set(userId, log);
       }
     }
