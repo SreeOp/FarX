@@ -9,7 +9,7 @@ module.exports = (client) => {
        
     const frame = canvas.createCanvas(2000, 932);
     const ctx = frame.getContext('2d');
-const bg = await canvas.loadImage('https://ibb.co/ZKr71fX');
+const bg = await canvas.loadImage('https://i.ibb.co/dPVV0K7/Welcome-20241027-170617-0000-upscaled.png');
 ctx.drawImage(bg, 0, 0, frame.width, frame.height);
 
       const username = member.user.username;
